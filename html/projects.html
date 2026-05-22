@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="../style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A collection of my software engineering projects.">
+    <title>Projects</title>
+</head>
+
+<body>
+    <div id="starfield" class="starfield"></div>
+    <nav>
+        <ul>
+            <li><a href="../index.html">Manan</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><button id="theme-toggle">☀️</button></li>
+        </ul>
+    </nav>
+    <main>
+        <h1>Projects</h1>
+        <button class="tag-button" data-tag="python">python</button>
+        <button class="tag-button" data-tag="C">C</button>
+        <button class="tag-button" data-tag="CLI">CLI</button>
+        <button class="tag-button" data-tag="GUI">GUI</button>
+        
+        <div class="projects-grid" id="projects-grid">
+
+            <div class="project-card" data-tags="python pygame GUI">
+                <a class="project-link" href="https://github.com/Manan-200/gravity" target="_blank">
+                    <h2>gravity</h2>
+                    <div class="tags">
+                        <span class="tag">python</span>
+                        <span class="tag">pygame</span>
+                        <span class="tag">GUI</span>
+                    </div>
+                </a>
+                <button class="desc-toggle" aria-expanded="false">Details ▾</button>
+                <div class="project-desc">
+                    <p>Gravity is a real-time n-body gravitational simulator built with Pygame. It simulates the gravitational pull between up to 300 bodies simultaneously, letting you watch emergent orbital patterns form in real time. I built it because I was fascinated by how simple physics rules produce complex, unpredictable behaviour and it was a good excuse to learn Pygame. The main tradeoff was performance: the simulation runs an O(n²) calculation on every frame, checking every body against every other. With 300 bodies this gets expensive fast. If I were building it again I'd use NumPy to vectorise the force calculations, which would give a significant speedup without changing the physics.</p>
+                </div>
+            </div>
+
+            <div class="project-card" data-tags="python discord.py">
+                <a class="project-link" href="https://github.com/Manan-200/dcBots" target="_blank">
+                    <h2>breadManager</h2>
+                    <div class="tags">
+                        <span class="tag">python</span>
+                        <span class="tag">discord.py</span>
+                    </div>
+                </a>
+                <button class="desc-toggle" aria-expanded="false">Details ▾</button>
+                <div class="project-desc">
+                    <p>breadManager is a Discord economy bot where members of a server can earn, gamble, and steal each other's breads. It has commands for gambling your balance, robbing other users, and checking the leaderboard. I built it because I wanted my friend group's server to have something fun and custom rather than a generic bot. The biggest technical mistake I made was storing all user data in a JSON file — it worked fine at first but quickly became messy to manage and error-prone when multiple operations happened at once. If I rebuilt it today I'd use MongoDB which I learnt recently.</p>
+                </div>
+            </div>
+
+            <div class="project-card" data-tags="python tkinter GUI">
+                <a class="project-link" href="https://github.com/Manan-200/equationSolver" target="_blank">
+                    <h2>Equation Solver</h2>
+                    <div class="tags">
+                        <span class="tag">python</span>
+                        <span class="tag">tkinter</span>
+                        <span class="tag">GUI</span>
+                    </div>
+                </a>
+                <button class="desc-toggle" aria-expanded="false">Details ▾</button>
+                <div class="project-desc">
+                    <p>Equation Solver is a desktop GUI application that solves systems of equations with up to three variables. You enter your equations through a clean interface and the app finds the solution. I built it out of frustration — solving three-variable systems by hand is tedious and error-prone. The core limitation is that it uses brute force: it iterates through a range of possible values and checks which combination satisfies all equations. This means the solution range is limited and the approach is inefficient. I'm still confused on how I would optimize it further.</p>
+                </div>
+            </div>
+
+            <div class="project-card" data-tags="C CLI">
+                <a class="project-link" href="" target="_blank">
+                    <h2>Twixt clone</h2>
+                    <div class="tags">
+                        <span class="tag">C</span>
+                        <span class="tag">CLI</span>
+                    </div>
+                </a>
+                <button class="desc-toggle" aria-expanded="false">Details ▾</button>
+                <div class="project-desc">
+                    <p>A functional clone of the board game Twixt, built in pure C. The win condition is checked using a depth-first search algorithm that traces whether a player has formed a connected path across the board. I built it as a Computer Programming assignment and it was my first time implementing a graph algorithm in C. It works correctly but the code is not optimised as the DFS runs on every move rather than only on the affected region of the board, which is wasteful. I didn't know enough at the time to optimise it, but now I'd look into incremental graph traversal to avoid redundant checks.</p>
+                </div>
+            </div>
+
+            <div class="project-card" data-tags="C CLI">
+                <a class="project-link" href="" target="_blank">
+                    <h2>C-unplugged</h2>
+                    <div class="tags">
+                        <span class="tag">C</span>
+                        <span class="tag">CLI</span>
+                    </div>
+                </a>
+                <button class="desc-toggle" aria-expanded="false">Details ▾</button>
+                <div class="project-desc">
+                    <p>C-Unplugged is a CLI application built in pure C that simulates a music player — it "plays" songs by displaying their title in the terminal, with controls to skip, go back, and browse a playlist. I built it as a Computer Programming assignment specifically to understand how linked lists work in practice. Every song in the playlist is a node in a doubly linked list, so navigating forward and backward maps directly to traversing next and previous pointers. It's a simple project but a bit challenging in pure C.</p>
+                </div>
+            </div>
+
+        </div>
+    </main>
+    <script src="../js/starfield.js"></script>
+    <script src="../js/theme.js"></script>
+    <script src="../js/projects.js"></script>
+</body>
+
+</html>
